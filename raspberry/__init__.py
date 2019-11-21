@@ -16,7 +16,6 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'raspberry.sqlite'),
         MAX_CONTENT_LENGTH=16 * 1024 * 1024,
-        PORT=8080,
     )
     app.config['UPLOAD_FOLDER'] = 'media'
 

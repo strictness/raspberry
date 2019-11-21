@@ -1,0 +1,4 @@
+include raspberry/schema.sql
+graft raspberry/static
+graft raspberry/templates
+global-exclude *.pyc

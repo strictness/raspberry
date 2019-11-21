@@ -5,4 +5,4 @@ VALUES
 
 INSERT INTO file (title, description, path, author_id, created)
 VALUES
-  ('test title', 'test' || x'0a' || 'description', 'test\\path\\file.jpg', 1, '2018-01-01 00:00:00');
+  ('test title', 'test' || x'0a' || 'description', 'media\\test_file.txt', 1, '2018-01-01 00:00:00');

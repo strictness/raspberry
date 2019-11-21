@@ -76,18 +76,17 @@ def upload():
         elif not description:
             error = 'Description is required.'
         elif not request.files or 'file' not in request.files:
-            error = 'File is required'
-
-        file = request.files['file']
-        if not _allowed_file(file.filename):
-            error = 'Invalid file format'
-
-        filename = secure_filename(file.filename)
-        path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            error = 'File is required.'
+        elif not _allowed_file(request.files['file'].filename):
+            error = 'Invalid file format.'
 
         if error is not None:
             flash(error)
         else:
+            file = request.files['file']
+            filename = secure_filename(file.filename)
+            path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+
             db = get_db()
             db.execute(
                 '''
